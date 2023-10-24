@@ -1,7 +1,9 @@
-import { ProtectedPage } from "@/features/auth/protected-page";
 import { ChatMenu } from "@/features/chat/chat-menu/chat-menu";
+import { ChatMenuContainer } from "@/features/chat/chat-menu/chat-menu-container";
 import { MainMenu } from "@/features/menu/menu";
 import { AI_NAME } from "@/features/theme/customise";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: AI_NAME,
@@ -14,10 +16,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ProtectedPage>
+    <>
       <MainMenu />
-      <ChatMenu />
-      <div className="flex-1">{children}</div>
-    </ProtectedPage>
+      <div className="flex-1 flex rounded-md overflow-hidden bg-card/70">
+        <ChatMenuContainer>
+          <ChatMenu />
+        </ChatMenuContainer>
+        {children}
+      </div>
+    </>
   );
 }

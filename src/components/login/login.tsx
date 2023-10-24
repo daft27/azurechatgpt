@@ -27,6 +27,9 @@ export const LogIn = () => {
       </CardHeader>
       <CardContent className="grid gap-4">
         <Button onClick={() => signIn("google")}>Google</Button>
+        {process.env.NODE_ENV === "development" && (
+          <Button onClick={() => signIn("localdev")}>Basic Auth (DEV ONLY)</Button>
+        )}
       </CardContent>
     </Card>
   );
