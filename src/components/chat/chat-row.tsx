@@ -36,7 +36,7 @@ const ChatRow: FC<ChatRowProps> = (props) => {
     >
       <div
         className={cn(
-          "flex flex-col  max-w-[100%] border rounded-lg overflow-hidden  p-3 gap-2"
+          "flex flex-col  max-w border rounded-lg overflow-hidden  p-3 gap-2"
         )}
       >
         <div className="flex flex-1">
@@ -76,7 +76,7 @@ const ChatRow: FC<ChatRowProps> = (props) => {
 
         <div
           className={cn(
-            "-m-4 p-4 prose prose-slate dark:prose-invert break-words prose-p:leading-relaxed prose-pre:p-0 max-w-non",
+            "-m-4 p-4 prose prose-slate dark:prose-invert break-words prose-p:leading-relaxed prose-pre:p-0 max-w-5xl",
             props.type === "assistant"
               ? "bg-secondary"
               : "bg-primary text-white"
